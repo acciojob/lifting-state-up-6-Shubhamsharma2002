@@ -4,14 +4,14 @@ import TodoList from "./TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Build a React app", completed: false },
-    { id: 3, text: "Deploy the React app", completed: false },
+    { id: 1, task: "Learn React", completed: false },
+    { id: 2, task: "Build a React app", completed: false },
+    { id: 3, task: "Deploy the React app", completed: false },
   ]);
 
   const handleComplete = (id) => {
-    setTodos(
-      todos.map((todo) =>
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
         todo.id === id
           ? { ...todo, completed: true }
           : todo
@@ -22,10 +22,7 @@ const App = () => {
   return (
     <div>
       <h1>Parent Component</h1>
-      <TodoList
-        todos={todos}
-        handleComplete={handleComplete}
-      />
+      <TodoList todos={todos} handleComplete={handleComplete} />
     </div>
   );
 };
