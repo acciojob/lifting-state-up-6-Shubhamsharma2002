@@ -11,9 +11,7 @@ const TodoList = ({ todos, handleComplete }) => {
             {todo.task}
 
             {!todo.completed && (
-              <button onClick={() => handleComplete(todo.id)}>
-                Complete
-              </button>
+              <button onClick={() => handleComplete(todo.id)}>Complete</button>
             )}
           </li>
         ))}
