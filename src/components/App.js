@@ -19,13 +19,13 @@ const App = () => {
   //   );
   // };
 const handleComplete = (id) => {
-  const updatedTodos = todos.map((todo) =>
-    todo.id === id
-      ? { ...todo, completed: true }
-      : todo
+  setTodos(
+    todos.map((todo) =>
+      todo.id === id
+        ? { ...todo, completed: true }
+        : todo
+    )
   );
-
-  setTodos(updatedTodos);
 };
   return (
     <div>
