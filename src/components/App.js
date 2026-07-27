@@ -9,16 +9,24 @@ const App = () => {
     { id: 3, task: "Deploy the React app", completed: false },
   ]);
 
-  const handleComplete = (id) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
-        todo.id === id
-          ? { ...todo, completed: true }
-          : todo
-      )
-    );
-  };
+  // const handleComplete = (id) => {
+  //   setTodos((prevTodos) =>
+  //     prevTodos.map((todo) =>
+  //       todo.id === id
+  //         ? { ...todo, completed: true }
+  //         : todo
+  //     )
+  //   );
+  // };
+const handleComplete = (id) => {
+  const updatedTodos = todos.map((todo) =>
+    todo.id === id
+      ? { ...todo, completed: true }
+      : todo
+  );
 
+  setTodos(updatedTodos);
+};
   return (
     <div>
       <h1>Parent Component</h1>
