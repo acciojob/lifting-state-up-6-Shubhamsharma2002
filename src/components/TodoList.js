@@ -7,12 +7,12 @@ const TodoList = ({ todos, handleComplete }) => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <span>{todo.text}</span>
-            {!todo.completed && (
+            <span>{todo.text || todo.task}</span>
+            {!todo.completed ? (
               <button onClick={() => handleComplete(todo.id)}>
                 Complete
               </button>
-            )}
+            ) : null}
           </li>
         ))}
       </ul>
